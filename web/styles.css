@@ -1,0 +1,147 @@
+/* High contrast, large-font, simple single-page layout.
+   Requirement: font >= 16px everywhere, large buttons, no nested menus. */
+
+:root {
+  --pass-color: #1b7a1b;
+  --review-color: #a06600;
+  --fail-color: #b00020;
+  --text-color: #111111;
+  --bg-color: #ffffff;
+  --panel-bg: #f4f4f4;
+  --border-color: #333333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: var(--text-color);
+  background: var(--bg-color);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #0a2540;
+  color: #ffffff;
+  padding: 24px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.subtitle {
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+main {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.panel {
+  background: var(--panel-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 4px;
+  font-size: 18px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+  width: 100%;
+  font-size: 18px;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.big-button {
+  margin-top: 24px;
+  width: 100%;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 16px;
+  background: #0a2540;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.big-button:hover {
+  background: #123a63;
+}
+
+.big-button:disabled {
+  background: #888888;
+  cursor: not-allowed;
+}
+
+.results {
+  margin-top: 24px;
+}
+
+.result-row {
+  font-size: 18px;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 2px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-PASS {
+  color: var(--pass-color);
+  font-weight: bold;
+}
+
+.status-REVIEW {
+  color: var(--review-color);
+  font-weight: bold;
+}
+
+.status-FAIL {
+  color: var(--fail-color);
+  font-weight: bold;
+}
+
+.override-button {
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 2px solid var(--border-color);
+  background: #ffffff;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  padding: 16px;
+  color: #555555;
+}

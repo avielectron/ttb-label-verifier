@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TTB Label Verifier (Prototype)</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <h1>TTB Label Verifier</h1>
+    <p class="subtitle">Prototype — local processing only, nothing is stored</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Single Label Check</h2>
+      <form id="single-form">
+        <label for="brand">Brand Name</label>
+        <input type="text" id="brand" name="brand" required>
+
+        <label for="abv">ABV (%)</label>
+        <input type="number" id="abv" name="abv" step="0.1" required>
+
+        <label for="image">Label Image</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+
+        <button type="submit" class="big-button">Verify Label</button>
+      </form>
+
+      <div id="single-results" class="results" hidden>
+        <h3>Results <span id="timing"></span></h3>
+        <div id="brand-result" class="result-row"></div>
+        <div id="abv-result" class="result-row"></div>
+        <div id="warning-result" class="result-row"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Batch Check</h2>
+      <p>Upload a CSV (columns: product_id, brand, abv, filename) and a ZIP of the matching images.</p>
+      <form id="batch-form">
+        <label for="csv_file">CSV File</label>
+        <input type="file" id="csv_file" name="csv_file" accept=".csv" required>
+
+        <label for="zip_file">Images ZIP</label>
+        <input type="file" id="zip_file" name="zip_file" accept=".zip" required>
+
+        <button type="submit" class="big-button">Run Batch &amp; Download Results</button>
+      </form>
+      <p id="batch-status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Prototype for internal demonstration only. Not connected to COLA.</p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
